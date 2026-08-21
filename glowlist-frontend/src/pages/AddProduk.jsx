@@ -18,14 +18,14 @@ export default function AddProduk() {
         e.preventDefault();
 
         console.log(formData);
-        
+
         try {
             const res = await fetch("http://localhost:5000/produk", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
             });
-            
+
             if (res.ok) {
                 alert("Produk berhasil ditambahkan!");
                 navigate("/produk");
@@ -81,14 +81,34 @@ export default function AddProduk() {
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label">ID Kategori</label>
-                    <input
+                    <label className="form-label">Kategori</label>
+                    <select
                         type="number"
                         name="id_kategori"
                         value={formData.id_kategori}
                         onChange={handleChange}
                         className="form-control"
-                        placeholder="Masukkan ID kategori"
+                        placeholder="Masukkan kategori"
+                    >
+                        <option value="">---Pilih Kategori---</option>
+                        <option value="2">Tone Up</option>
+                        <option valie="3">Sunscreen</option>
+                        <option value="4">Musturizer</option>
+                        <option value="5">Lip balm</option>
+                    </select>
+                </div>
+
+
+                <div className="mb-3">
+                    <label className="from-label">Nama File</label>
+                    <input
+                        type="text"
+                        name="nama_file"
+                        value={formData.nama_file}
+                        onChange={handleChange}
+                        className="form-control"
+                        placeholder="Masukkan Nama File"
+                        required
                     />
                 </div>
 
