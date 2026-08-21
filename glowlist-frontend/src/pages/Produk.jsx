@@ -32,7 +32,6 @@ export default function Produk() {
                 <Link to="/produk/tambah" className="btn btn-primary">
                     + Tambah Produk
                 </Link>
-
             </div>
 
             <table className="table table-bordered table-striped">
